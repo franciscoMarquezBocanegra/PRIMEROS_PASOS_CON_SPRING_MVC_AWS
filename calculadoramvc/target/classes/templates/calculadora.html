@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head> 
+        <title>calculadora</title> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <style>
+            .button {
+                display: inline-block;
+                border: none;
+                border-radius: 4px;
+                padding: 10px 20px;
+                margin: 5px;
+                font-size: 16px;
+                text-align: center;
+                text-decoration: none;
+                background-color: #4CAF50;
+                color: #ffffff;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .button:hover {
+                background-color: #45a049;
+            }
+
+            .button:active {
+                background-color: #3e8e41;
+            }
+
+            .button.special {
+                background-color: #ff5722;
+            }
+
+            .button.special:hover {
+                background-color: #e64a19;
+            }
+
+            .button.special:active {
+                background-color: #d84315;
+            }
+
+        </style>
+    </head>
+    <body>    
+        <form action="/add">
+            <input type="text" name="number" >
+
+            <br>
+            </br>
+
+            <legend>Resultado</legend>
+            <input type="text" name="result" th:value="${currval}">
+            <br>
+            <input type="submit" value="+" class="button">
+            <input type="submit" value="*" formaction="mult" class="button">
+            <input type="submit" value="/" formaction="div" class="button">
+            <input type="submit" value="-" formaction="rest" class="button">
+            <input type="submit" value="ac" formaction="ac" class="button">
+        </form>
+
+        <script>
+            var resultField = 0;
+            var numberField = 0;
+            var resultField = document.getElementsByName("result")[0];
+            var numberField = document.getElementsByName("number")[0];
+
+            function updateResult(value) {
+                resultField.value = value;
+            }
+
+            function calculate(operation) {
+                var numberValue = Number(numberField.value);
+                var resultValue = Number(resultField.value);
+
+                if (isNaN(numberValue)) {
+                    alert("Ingrese un número válido.");
+                    return;
+                }
+
+                if (operation === "+") {
+                    resultValue += numberValue;
+                } else if (operation === "*") {
+                    resultValue *= numberValue;
+                } else if (operation === "/") {
+                    resultValue /= numberValue;
+                } else if (operation === "-") {
+                    resultValue -= numberValue;
+                }
+
+                updateResult(resultValue);
+                numberField.value = "";
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
