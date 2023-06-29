@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>calculadora</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>    
+    <form action="/add">
+        <input type="text", name="number" th:value='${currval}'>
+        <input type="submit", value="+">
+        <input type='submit' value="*" formaction="mult">
+        <input type='submit' value="/" formaction="div">
+        <input type='submit' value="-" formaction="rest">
+               
+     </form>
+</body>
+</html>
