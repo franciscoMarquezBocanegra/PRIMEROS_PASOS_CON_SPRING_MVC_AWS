@@ -24,7 +24,7 @@ Construya una aplicación en Spring que implemente una calculadora con las funci
 -Esta interfaz le permitira hacer 4 operaciones matematicas: suma, resta, divicion y multiplicación. Tambien dispone de un boton de "AC" que le permite borrar.
 
 
-# Prueba se varias sesiones:
+# Prueba en varias sesiones:
 
 ![image](https://github.com/franciscoMarquezBocanegra/PRIMEROS_PASOS_CON_SPRING_MVC_AWS/assets/98216991/15467cd2-dad7-41ee-a3db-fb4d654398f2)
 
